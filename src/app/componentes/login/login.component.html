@@ -1,0 +1,60 @@
+<mat-toolbar>
+    <span>
+      
+    </span>
+</mat-toolbar>
+<div class="content">
+  <form novalidate #formulario="ngForm">
+    <div class="container">
+      <mat-card>
+        <h4>
+          Login
+        </h4>
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Usuário</mat-label>
+            <input 
+            name="username"
+            [(ngModel)]="username"
+            matInput 
+            placeholder="Digite o usuário"
+            required
+            #inputUsuario="ngModel">
+            <mat-icon matSuffix>person</mat-icon>
+
+          <mat-error *ngIf="!inputUsuario.valid && inputUsuario.touched" class="form-text text-danger">Insira seu usuário</mat-error>
+          </mat-form-field>
+            <br/>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Senha</mat-label>
+            <input 
+            type="password"
+            name="password"
+            [(ngModel)]="password"
+            matInput
+            placeholder="Digite a senha"
+            required
+            #inputSenha="ngModel"
+            >
+            <mat-icon matSuffix>lock</mat-icon>
+
+            <mat-error *ngIf="!inputSenha.valid && inputSenha.touched" class="form-text text-danger">Insira sua senha</mat-error>
+          </mat-form-field>
+
+          <div class="buttons">
+            <button (click)="fazerLogin()" mat-raised-button style="background-color: #23143b; color: white;">Entrar</button>
+            <button (click)="reset()" mat-raised-button color="warn">Reset</button>
+          </div>
+
+      </mat-card>
+    </div>
+
+     
+  </form>
+</div>
+      
+
+
+
+      
+   
+      

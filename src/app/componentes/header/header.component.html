@@ -1,0 +1,11 @@
+ <mat-toolbar color="primary" class="header mat-elevation-z8">
+    <!-- <span>
+        <img routerLink="" src="assets/hospital.png" alt="logo-todo">
+    </span> -->
+    <span class="space">
+        <h1 routerLink="">Gerenciamento de Estágios</h1>
+    </span>
+    <a mat-icon-button *ngIf="!login.username" routerLink="login">Log in</a>
+    <a  mat-icon-button *ngIf="login.username"><mat-icon matSuffix>person</mat-icon> {{login.username}}</a>
+    <a class="space2" mat-icon-button *ngIf="login.username" (click)="logout()"><mat-icon matSuffix>logout</mat-icon> Log out</a>
+</mat-toolbar>

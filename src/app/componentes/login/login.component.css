@@ -1,0 +1,57 @@
+.content{
+    height: 75%;
+    background-color: #23143b;
+}
+
+form {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    
+}
+
+h4{
+    color: rgb(49, 49, 49);
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.buttons {
+    width: 100%;
+    text-align: center;
+}
+
+button {
+    margin-right: .5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+mat-toolbar{
+    height: 80px;
+    background-color: #23143b;
+    color: white;
+    justify-content: center;
+}
+
+span {
+    display: flex;
+    align-items: center;
+}
+
+.full-width{
+    width: 60%;
+}
+
+.container {
+    width: 44%;
+    margin: auto;
+    justify-content: center;
+}
+
+mat-card {
+    width: 100%;
+    text-align: center;
+}
+
+

@@ -1,0 +1,86 @@
+<form *ngIf="login.username!=undefined">
+    <h1>Adicionar Grupo</h1>
+
+      <form novalidate #formulario="ngForm">
+        <mat-form-field class="form">
+           <mat-label>Nome</mat-label>
+           <input 
+           [(ngModel)]="grupo.nome" 
+           name="grupo.nome"
+           matInput 
+           placeholder="Nome do grupo"
+           required
+           minlength="1"
+           #inputNome="ngModel"
+           >
+
+           <small *ngIf="inputNome.valid && inputNome.touched" style="color: green;text-align: start;">Ok</small>
+          <mat-error *ngIf="!inputNome.valid && inputNome.touched" class="form-text text-danger">Insira um nome</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field class="form">
+           <mat-label>Instituição</mat-label>
+           <input 
+           [(ngModel)]="grupo.instituicao" 
+           name="grupo.instituicao" 
+           matInput 
+           placeholder="Instituição"
+           required
+           #inputInstituicao="ngModel"
+           >
+
+           <small *ngIf="inputInstituicao.valid && inputInstituicao.touched" style="color: green;text-align: start;">Ok</small>
+          <mat-error *ngIf="!inputInstituicao.valid && inputInstituicao.touched" class="form-text text-danger">Insira a instituicao</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="selecionar" appearance="fill">
+          <mat-label>Setor</mat-label>
+          <mat-select 
+          [(ngModel)]="grupo.setor" 
+          name="grupo.setor"
+          required
+          #inputSetor="ngModel"
+          >
+            <mat-option 
+            *ngFor="let setor of listaSetor" 
+            [value]="setor.nome"
+            >{{setor.nome}}
+          </mat-option>
+          </mat-select>
+
+          <small *ngIf="inputSetor.valid && inputSetor.touched" style="color: green;text-align: start;">Ok</small>
+          <mat-error *ngIf="!inputSetor.valid && inputSetor.touched" class="form-text text-danger">Insira um setor</mat-error>
+        
+        </mat-form-field>
+
+         <mat-form-field class="selecionar" appearance="fill">
+            <mat-label>Selecionar Alunos</mat-label>
+            <mat-select multiple [(ngModel)]="selected" name="grupo.alunos">
+              <mat-option 
+              *ngFor="let aluno of listaAlunos" 
+              [value]="aluno"
+              >{{aluno.nome}}
+            </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </form>
+
+      
+
+      <div class="buttons">
+        <button (click)="create()" mat-stroked-button color="primary">Criar</button>
+        <button (click)="cancel()" routerLink="" mat-stroked-button color="warn">Cancelar</button>
+      </div>
+
+</form>
+
+<div *ngIf="login.username===undefined" class="notLogged">
+  <mat-toolbar>
+    <span>
+      <h5>
+      Para acessar, faça o login
+      </h5>
+    </span>
+</mat-toolbar>
+</div>

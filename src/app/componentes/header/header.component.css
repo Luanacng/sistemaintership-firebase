@@ -1,0 +1,22 @@
+img {
+    height: 3rem;
+}
+
+.header {
+    background-color: #462976;
+    justify-content: center;
+    height: 10%;
+}
+
+span {
+    display: flex;
+    align-items: center;
+}
+
+.space{
+    flex: 1 1 auto;
+}
+
+.space2{
+    flex: 0.2;
+}

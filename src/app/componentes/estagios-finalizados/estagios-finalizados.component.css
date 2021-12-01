@@ -1,0 +1,54 @@
+.container {
+    width: 85%;
+    margin: auto;
+    text-align: start;
+    padding-bottom: 50px;
+}
+
+mat-tab-group mat-card {
+    margin-top: .8rem;
+    margin-bottom: 50px;
+    padding: 2rem;
+    text-align: start;
+}
+
+mat-card-title{
+    font-weight: 700;
+}
+
+mat-card-subtitle {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+mat-tab{
+    width: 100%;
+}
+
+mat-tab-group .content{
+    width: 95%;
+    margin: auto;
+    text-align: justify;
+}
+
+.content {
+    width: 100%;
+    margin-top: 30px;
+    text-align: start;
+}
+
+.actions {
+    text-align: end;
+}
+
+.notLogged mat-toolbar{
+    height: 150px;
+    background-color: #462976;
+    color: white;
+    justify-content: center;
+}
+
+.notLogged span{
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,85 @@
+<form *ngIf="login.username!=undefined">
+    <h1>Adicionar</h1>
+    
+      <div class="forms">
+        <mat-form-field class="form">
+           <mat-label>Nome</mat-label>
+           <input 
+           [(ngModel)]="estagio.nome" 
+           name="estagio.nome" 
+           matInput 
+           placeholder="Nome"
+           required
+           minlength="3"
+           #inputNome = "ngModel">
+
+          <small *ngIf="inputNome.valid && inputNome.touched" class="form-text text-success" style="color: green;text-align: start;">Ok</small>
+          <mat-error *ngIf="!inputNome.valid && inputNome.touched" class="form-text text-danger">Insira um nome</mat-error>
+        </mat-form-field>
+    
+        
+
+        <mat-form-field class="form">
+           <mat-label>Descricao</mat-label>
+           <input [(ngModel)]="estagio.descricao" name="estagio.descricao" matInput placeholder="Descrição">
+        </mat-form-field>
+
+        <mat-form-field class="selecionar" appearance="fill">
+          <mat-label>Grupos abertos</mat-label>
+          <mat-select 
+          [(ngModel)]="estagio.grupo" 
+          name="estagio.grupo"
+          required
+          #inputGrupo="ngModel"
+          >
+            <mat-option 
+            *ngFor="let grupo of listaGrupos" 
+            [value]="grupo"
+            >{{grupo.nome}}
+          </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="data-inicio" appearance="fill">
+          <mat-label>DATA DE INICIO</mat-label>
+          <input
+          [(ngModel)]="estagio.inicio" 
+          name="estagio.dataInicio" 
+          matInput 
+          [matDatepicker]="dp3" 
+          required>
+          <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+          <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="data-fim" appearance="fill">
+          <mat-label>DATA PARA FINALIZAR</mat-label>
+          <input
+          [(ngModel)]="estagio.fim" 
+          name="estagio.dataFim" 
+          matInput 
+          [matDatepicker]="dp4" 
+          required>
+          <mat-datepicker-toggle matSuffix [for]="dp4"></mat-datepicker-toggle>
+          <mat-datepicker #dp4 disabled="false"></mat-datepicker>
+      </mat-form-field>
+      </div>
+
+      
+
+      <div class="buttons">
+        <button (click)="create()" mat-stroked-button color="primary">Criar</button>
+        <button routerLink="/estagios-abertos" mat-stroked-button color="warn">Cancelar</button>
+      </div>
+
+</form>
+
+<div *ngIf="login.username===undefined" class="notLogged">
+  <mat-toolbar>
+    <span>
+      <h5>
+      Para acessar, faça o login
+      </h5>
+    </span>
+</mat-toolbar>
+</div>

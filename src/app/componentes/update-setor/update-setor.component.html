@@ -1,0 +1,38 @@
+<form *ngIf="login.username!=undefined">
+    <h1>Atualizar Setor</h1>
+
+      <form novalidate #formulario="ngForm">
+        <mat-form-field class="form">
+            <mat-label>Nome do setor</mat-label>
+            <input 
+            [(ngModel)]="setor.nome" 
+            name="setor.nome" 
+            matInput 
+            placeholder="Nome"
+            required
+            minlength="1"
+            #inputNome="ngModel"
+            >
+
+            <small *ngIf="inputNome.valid && inputNome.touched" style="color: green;text-align: start;">Ok</small>
+           <mat-error *ngIf="!inputNome.valid && inputNome.touched" class="form-text text-danger">Insira o nome do setor</mat-error>
+          </mat-form-field>
+
+      </form>
+
+      <div class="buttons">
+        <button (click)="update()"  mat-stroked-button color="primary">Atualizar</button>
+        <button  (click)="cancel()" mat-stroked-button color="warn">Cancelar</button>
+      </div>
+
+</form>
+
+<div *ngIf="login.username===undefined" class="notLogged">
+  <mat-toolbar>
+    <span>
+      <h5>
+      Para acessar, faça o login
+      </h5>
+    </span>
+</mat-toolbar>
+</div>

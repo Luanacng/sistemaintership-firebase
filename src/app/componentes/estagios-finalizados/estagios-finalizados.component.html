@@ -1,0 +1,29 @@
+<div *ngIf="login.username!=undefined" class="container">
+    <div class="content" *ngFor="let estagio of listFinished">
+        <mat-card class="mat-elevation-z8">
+            <mat-card-header>
+              <mat-card-title>{{estagio.nome}}</mat-card-title>
+              <mat-card-subtitle>Descrição: {{estagio.descricao}}</mat-card-subtitle>
+              <mat-card-subtitle>Início do estágio: {{estagio.inicio}}</mat-card-subtitle>
+              <mat-card-subtitle style="font-weight: 700; color: black;">Finalizado em: {{estagio.fim}}</mat-card-subtitle>
+            </mat-card-header>
+
+            <div class="actions">
+              <button class="delete" (click)="delete(estagio.id)" mat-mini-fab color="warn" title="Deletar estágio">
+                  <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </mat-card>
+
+    </div>
+</div>
+
+<div *ngIf="login.username===undefined" class="notLogged">
+  <mat-toolbar>
+    <span>
+      <h5>
+      Para acessar, faça o login
+      </h5>
+    </span>
+</mat-toolbar>
+</div>

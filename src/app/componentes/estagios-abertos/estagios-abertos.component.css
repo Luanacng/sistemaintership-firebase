@@ -1,0 +1,133 @@
+.container {
+    width: 60%;
+    margin: auto;
+    text-align: end;
+    padding-bottom: 50px;
+    
+}
+
+
+.row {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+
+}
+
+
+.col-4 button {
+    width: 100%;
+    font-weight: 500;
+    color: #462976;
+}
+
+.content {
+    width: 100%;
+}
+
+mat-tab-group mat-card {
+    margin-top: .8rem;
+    margin-bottom: 50px;
+    padding: 2rem;
+    text-align: start;
+}
+
+mat-card-title{
+    font-weight: 700;
+    margin-top: 30px;
+
+}
+
+mat-card-subtitle {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+p {
+    text-align: end;
+    font-weight: 600;
+    color: rgb(114,111,111);
+    margin-bottom: 0;
+}
+
+.actions {
+    text-align: end;
+}
+
+.actions button {
+    margin: .5rem;
+}
+
+.done{
+   background-color: #0880EE;
+}
+
+.done:hover{
+    
+    background-color: springgreen;
+    color: black;
+}
+
+.delete:hover{
+    background-color: white;
+    color: #F44316;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 500;
+    color: rgb(46, 45, 45);
+    padding: auto;    
+    text-align: center;
+}
+
+mat-tab{
+    width: 100%;
+    
+}
+
+mat-tab-group .content{
+    width: 95%;
+    margin: auto;
+    text-align: justify;
+}
+
+.badge {
+    text-align: center;
+}
+
+.flex-container button{
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.flex-container button:hover{
+    background-color: black;
+    color: white;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-container > div {
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+}
+
+.notLogged mat-toolbar{
+    height: 150px;
+    background-color: #462976;
+    color: white;
+    justify-content: center;
+}
+
+.notLogged span{
+    display: flex;
+    align-items: center;
+}
